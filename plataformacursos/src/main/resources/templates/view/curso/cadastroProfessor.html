@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Cadastro Professor</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">APP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Curso
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="cadastroCurso">Cadastrar Curso</a>
+          <a class="dropdown-item" href="cursos">Mostrar Cursos</a>
+        </div>
+      </li>
+	     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Professor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+          <a class="dropdown-item active" href="cadastroProfessor">Cadastrar Professores</a>
+          <a class="dropdown-item" href="professores">Mostrar Professores</a>
+        </div>
+      </li>      
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Disciplina
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+          <a class="dropdown-item" href="cadastroDisciplina">Cadastrar Disciplina</a>
+          <a class="dropdown-item" href="disciplinas">Mostrar Disciplinas</a>
+        </div>
+      </li>  
+    </ul>
+    </div>
+    </nav>
+    </div>
+<div class="container-fluid">
+<h1>Cadastro de Professor</h1>
+<form method="post">
+<div class="form-group">
+<p><label for="nome">Nome do Professor</label>
+<input type="text" class="form-control" id="nome" name="nome" value="" placeholder="Nome do Professor"/></p>
+</div>
+<div class="form-group">
+<p><label for="cpf">CPF</label>
+<input type="text" class="form-control" id="cpf" maxlength="11" minlength="11" name="cpf" value="" placeholder="CPF"/></p>
+</div>
+<div class="form-group">
+<p><label for="email">Email</label>
+<input type="text" class="form-control" id="email" name="email" value="" placeholder="Email"/></p>
+</div>
+<div class="form-group">
+<p><label for="senha">Senha</label>
+<input type="password" class="form-control" id="senha" name="senha" value="" placeholder="Senha"/></p>
+</div>
+<div class="form-group">
+<p><label for="salario">Salário</label>
+<input type="number" class="form-control" id="salario" name="salario" value="" placeholder="Salário"/></p>
+</div>
+<button class="btn btn-primary" type="submit" name="Enviar">Enviar</button> 
+</form>
+</div>
+</body>
+</html>

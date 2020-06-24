@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Atualizar Professor</title>
+</head>
+<body>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">APP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Curso
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="cadastroCurso">Cadastrar Curso</a>
+          <a class="dropdown-item" href="cursos">Mostrar Cursos</a>
+        </div>
+      </li>
+	     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Professor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+          <a class="dropdown-item" href="cadastroProfessor">Cadastrar Professores</a>
+          <a class="dropdown-item" href="professores">Mostrar Professores</a>
+        </div>
+      </li>      
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Disciplina
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+          <a class="dropdown-item" href="cadastroDisciplina">Cadastrar Disciplina</a>
+          <a class="dropdown-item" href="disciplinas">Mostrar Disciplinas</a>
+        </div>
+      </li>  
+    </ul>
+    </div>
+    </nav>
+    </div>
+
+<div class="container-fluid">
+<h1>Editar Professor</h1>
+
+<form method="post" th:action="@{/atualizarProfessor}" th:object="${professor}">
+<div th:each="professor : ${professor}">
+<input type="hidden" name="iddisciplina" th:value="${professor.idprofessor}"/> 
+<div class="form-group">
+<p><label for="nome">Nome do Professor</label>
+<input type="text" class="form-control" id="nome" name="nome" th:value="${professor.nome}" th:placeholder="${professor.nome}"/></p>
+</div>
+<div class="form-group">
+<p><label for="cpf">CPF</label>
+<input type="text" class="form-control" minlength="11" maxlength="11" id="cpf" name="cpf" th:value="${professor.cpf}" th:placeholder="${professor.cpf}"/></p>
+</div>
+<div class="form-group">
+<p><label for="email">Email</label>
+<input type="text" class="form-control" id="email" name="email" th:value="${professor.email}" th:placeholder="${professor.email}"/></p>
+</div>
+<div class="form-group">
+<p><label for="senha">Senha</label>
+<input type="password" class="form-control" id="senha" name="senha" th:value="${professor.senha}"/></p>
+</div>
+<div class="form-group">
+<p><label for="salario">Salário</label>
+<input type="text" class="form-control" id="salario" name="salario" th:value="${professor.salario}" th:placeholder="${professor.salario}"/></p>
+</div>
+</div>
+<button class="btn btn-primary" type="submit" name="Enviar">Enviar</button> 
+</form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<title>Detalhes</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="#">APP</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conteudoNavbarSuportado" aria-controls="conteudoNavbarSuportado" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Curso
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="cadastroCurso">Cadastrar Curso</a>
+          <a class="dropdown-item active" href="cursos">Mostrar Cursos</a>
+        </div>
+      </li>
+	     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Professor
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+          <a class="dropdown-item" href="cadastroProfessor">Cadastrar Professores</a>
+          <a class="dropdown-item" href="professores">Mostrar Professores</a>
+        </div>
+      </li>      
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Disciplina
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
+          <a class="dropdown-item" href="cadastroDisciplina">Cadastrar Disciplina</a>
+          <a class="dropdown-item" href="disciplinas">Mostrar Disciplinas</a>
+        </div>
+      </li>  
+    </ul>
+    </div>
+    </nav>
+    </div>
+<div class="container-fluid">
+<h1>Detalhes do Curso</h1>
+<h2><a href="/cadastroCurso"></a></h2>
+<table class="table table-striped">
+<thead>
+<tr>
+<th scope="col">ID</th>
+<th scope="col">Nome</th>
+<th scope="col">Preço</th>
+<th scope="col">Carga Horária</th>
+<th scope="col">Linguagem</th>
+</tr>
+</thead>
+<tbody>
+<tr th:each="curso : ${cursos}">
+   <td><p th:text="${curso.idcurso}"></p></td>
+   <td><p th:text="${curso.nome}"></p></td>
+   <td><p th:text="'R$ ' + ${curso.preco}"></p></td>
+   <td><p th:text="${curso.ch}"></p></td>
+   <td><p th:text="${curso.linguagem}"></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
